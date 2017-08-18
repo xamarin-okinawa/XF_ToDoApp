@@ -39,17 +39,6 @@ namespace XF_ToDoApp.ViewModels
                 _navigationService.NavigateAsync("SecondPage");
             });
 
-            ClearTaskCommand = new DelegateCommand(() =>
-            {
-                System.Diagnostics.Debug.WriteLine("ClearTaskCommand");
-
-                var realm = Realm.GetInstance();
-                using (var trans = realm.BeginWrite())
-                {
-                    realm.RemoveAll<TodoItem>();
-                    trans.Commit();
-                }
-            });
 
             ItemTappedCommand = new DelegateCommand<object>((param) =>
             {

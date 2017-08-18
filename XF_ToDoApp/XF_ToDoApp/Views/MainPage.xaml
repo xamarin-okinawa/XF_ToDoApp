@@ -8,7 +8,6 @@
              Title="MainPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddTaskCommand}"/>
-        <ToolbarItem Text="Clear" Command="{Binding ClearTaskCommand}"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">
