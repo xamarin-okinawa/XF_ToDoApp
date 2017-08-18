@@ -5,10 +5,9 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XF_ToDoApp.Views.MainPage"
              xmlns:b="clr-namespace:XF_ToDoApp.Commons"
-             Title="MainPage">
+             Title="すべてのタスク">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddTaskCommand}"/>
-        <ToolbarItem Text="Clear" Command="{Binding ClearTaskCommand}"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout Spacing="20" Padding="15">

@@ -21,7 +21,6 @@ namespace XF_ToDoApp.ViewModels
 
         private readonly INavigationService _navigationService;
         public ICommand AddTaskCommand { get; }
-        public ICommand ClearTaskCommand { get; }
         public ICommand ItemTappedCommand { get; }
         public ICommand DeleteTodoCommand { get; }
         public MainPageViewModel(INavigationService navigationService)
@@ -37,18 +36,6 @@ namespace XF_ToDoApp.ViewModels
                 var navigationParameters = new NavigationParameters();
                 navigationParameters.Add("id", "");
                 _navigationService.NavigateAsync("SecondPage");
-            });
-
-            ClearTaskCommand = new DelegateCommand(() =>
-            {
-                System.Diagnostics.Debug.WriteLine("ClearTaskCommand");
-
-                var realm = Realm.GetInstance();
-                using (var trans = realm.BeginWrite())
-                {
-                    realm.RemoveAll<TodoItem>();
-                    trans.Commit();
-                }
             });
 
             ItemTappedCommand = new DelegateCommand<object>((param) =>
