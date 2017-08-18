@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XF_ToDoApp.Views.SecondPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="OK" Command="{Binding TodoCreationCommand}"/>
+        <ToolbarItem Text="Cancel" Command="{Binding CancelTaskCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout x:Name="StackLayout" Spacing="20" Padding="15">
+        <Label Text="いつやるの？"/>
+        <DatePicker Date="{Binding InDate, Mode=TwoWay}"/>
+        <Label Text="なにをやるの？"/>
+        <Entry Text="{Binding Todo, Mode=TwoWay}"/>
+    </StackLayout>
+</ContentPage>
